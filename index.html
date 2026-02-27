@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Flower 🌸</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating petals -->
+  <div class="floating-petal" style="left:5%;animation-duration:12s;animation-delay:0s;font-size:1.2rem;">🌸</div>
+  <div class="floating-petal" style="left:20%;animation-duration:15s;animation-delay:3s;">🌺</div>
+  <div class="floating-petal" style="left:40%;animation-duration:10s;animation-delay:6s;font-size:1rem;">✨</div>
+  <div class="floating-petal" style="left:60%;animation-duration:14s;animation-delay:1s;">🌷</div>
+  <div class="floating-petal" style="left:75%;animation-duration:11s;animation-delay:8s;font-size:1rem;">💫</div>
+  <div class="floating-petal" style="left:90%;animation-duration:13s;animation-delay:4s;">🌼</div>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="container">
+    <header>
+      <h1>Memory <span>Flower</span> 🌸</h1>
+      <p>Retrouvez toutes les paires pour faire éclore le jardin</p>
+    </header>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-label">Coups</div>
+        <div class="stat-value" id="moves">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Paires</div>
+        <div class="stat-value" id="pairs-found">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Temps</div>
+        <div class="stat-value" id="timer">0:00</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="difficulty-selector">
+        <button class="diff-btn active" data-level="easy">Facile</button>
+        <button class="diff-btn" data-level="medium">Moyen</button>
+        <button class="diff-btn" data-level="hard">Difficile</button>
+      </div>
+      <button class="btn btn-primary" id="new-game-btn">✨ Nouvelle Partie</button>
+    </div>
+
+    <div class="best-score" id="best-score-display">
+      🏆 Meilleur score : <strong id="best-score-val">—</strong>
+    </div>
+
+    <div class="grid" id="game-grid"></div>
+  </div>
+
+  <!-- Win overlay -->
+  <div class="win-overlay" id="win-overlay">
+    <div class="win-box">
+      <span class="win-emoji" id="win-emoji">🌸</span>
+      <div class="win-title">Bravo !</div>
+      <div class="win-stats" id="win-stats"></div>
+      <div class="win-record" id="win-record"></div>
+      <button class="btn btn-primary" id="play-again-btn">🌷 Rejouer</button>
+    </div>
+  </div>
+
+  <script src="confetti.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
